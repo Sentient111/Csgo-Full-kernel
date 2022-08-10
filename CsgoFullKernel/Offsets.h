@@ -112,37 +112,37 @@ namespace hazedumper {
 		#define dwClientState_PlayerInfo  0x52C0
 		#define dwClientState_State  0x108
 		#define dwClientState_ViewAngles  0x4D90
-		#define dwEntityList  0x4DDB8FC
-		#define dwForceAttack  0x320BDC8
-		#define dwForceAttack2  0x320BDD4
-		#define dwForceBackward  0x320BE10
-		#define dwForceForward  0x320BE04
-		#define dwForceJump  0x52858DC
-		#define dwForceLeft  0x320BE1C
-		#define dwForceRight  0x320BE28
+		#define dwEntityList  0x4DDB91C
+		#define dwForceAttack  0x320BDE8
+		#define dwForceAttack2  0x320BDF4
+		#define dwForceBackward  0x320BE30
+		#define dwForceForward  0x320BE24
+		#define dwForceJump  0x52858FC
+		#define dwForceLeft  0x320BE3C
+		#define dwForceRight  0x320BE48
 		#define dwGameDir  0x62B900
-		#define dwGameRulesProxy  0x52F910C
+		#define dwGameRulesProxy  0x52F912C
 		#define dwGetAllClasses  0xDE9C9C
 		#define dwGlobalVars  0x58CCE0
-		#define dwGlowObjectManager  0x53245E8
-		#define dwInput  0x522CED0
+		#define dwGlowObjectManager  0x5324618
+		#define dwInput  0x522CEF0
 		#define dwInterfaceLinkList  0x96EF44
 		#define dwLocalPlayer  0xDBF4BC
 		#define dwMouseEnable  0xDC51C8
 		#define dwMouseEnablePtr  0xDC5198
-		#define dwPlayerResource  0x320A160
-		#define dwRadarBase  0x5210674
+		#define dwPlayerResource  0x320A180
+		#define dwRadarBase  0x5210694
 		#define dwSensitivity  0xDC5064
 		#define dwSensitivityPtr  0xDC5038
 		#define dwSetClanTag  0x8A410
-		#define dwViewMatrix  0x4DCD214
-		#define dwWeaponTable  0x522D994
+		#define dwViewMatrix  0x4DCD234
+		#define dwWeaponTable  0x522D9B4
 		#define dwWeaponTableIndex  0x326C
 		#define dwYawPtr  0xDC4E28
 		#define dwZoomSensitivityRatioPtr  0xDCB610
 		#define dwbSendPackets  0xD8452
 		#define dwppDirect3DDevice9  0xA6050
-		#define find_hud_element  0x281D5A80
+		#define find_hud_element  0x2DE55A80
 		#define force_update_spectator_glow  0x3BE35A
 		#define interface_engine_cvar  0x3EA3C
 		#define is_c4_owner  0x3CB3D0
@@ -150,7 +150,7 @@ namespace hazedumper {
 		#define m_bIsLocalPlayer  0x3628
 		#define m_flSpawnTime  0x103C0
 		#define m_pStudioHdr  0x2950
-		#define m_pitchClassPtr  0x5210910
+		#define m_pitchClassPtr  0x5210930
 		#define m_yawClassPtr  0xDC4E28
 		#define model_ambient_min  0x590054
 		#define set_abs_angles  0x1E59F0
