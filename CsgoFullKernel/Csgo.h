@@ -89,11 +89,11 @@ void CsgoMain()
 		}
 
 
-		DWORD localplayer = ReadMemory<DWORD>(clientBase + dwLocalPlayer);
-		DWORD localTeam = ReadMemory<DWORD>(localplayer + m_iTeamNum);//fixed
+		DWORD localplayer = ReadMemory<DWORD>(clientBase + hazedumper::signatures::dwLocalPlayer);
+		DWORD localTeam = ReadMemory<DWORD>(localplayer + hazedumper::netvars::m_iTeamNum);//fixed
 
 
-		Vector3 punchAngle = ReadMemory<Vector3>(localplayer + m_aimPunchAngle);
+		Vector3 punchAngle = ReadMemory<Vector3>(localplayer + hazedumper::netvars::m_aimPunchAngle);
 
 
 		punchAngle.x = punchAngle.x * 12; punchAngle.y = punchAngle.y * 12;
@@ -105,30 +105,30 @@ void CsgoMain()
 		FrameRect(hdc, &rect, brush, 2);
 
 
-		MAT4X4 viewMatrix = ReadMemory<MAT4X4>(clientBase + dwViewMatrix);
+		MAT4X4 viewMatrix = ReadMemory<MAT4X4>(clientBase + hazedumper::signatures::dwViewMatrix);
 
 		for (size_t i = 0; i < 32; i++)
 		{
-			DWORD currEnt = ReadMemory<DWORD>(clientBase + dwEntityList + (i * 0x10));
+			DWORD currEnt = ReadMemory<DWORD>(clientBase + hazedumper::signatures::dwEntityList + (i * 0x10));
 			if (!currEnt)
 				continue;
 
-			int entHealth = ReadMemory<int>(currEnt + m_iHealth);
+			int entHealth = ReadMemory<int>(currEnt + hazedumper::netvars::m_iHealth);
 			if (0 >= entHealth)
 				continue;
 
-			DWORD dormant = ReadMemory<DWORD>(currEnt + m_bDormant);
+			DWORD dormant = ReadMemory<DWORD>(currEnt + hazedumper::signatures::m_bDormant);
 			if (dormant)
 				continue;
 
-			DWORD teamNum = ReadMemory<DWORD>(currEnt + m_iTeamNum);
+			DWORD teamNum = ReadMemory<DWORD>(currEnt + hazedumper::netvars::m_iTeamNum);
 			if (teamNum == localTeam)
 				continue;
 
-			Vector3 feetPos = ReadMemory<Vector3>(currEnt + m_vecOrigin);
+			Vector3 feetPos = ReadMemory<Vector3>(currEnt + hazedumper::netvars::m_vecOrigin);
 			Vector2 feetPosScreen = WorldToScreen(feetPos, viewMatrix);
 
-			DWORD bonePtr = ReadMemory<DWORD>(currEnt + m_dwBoneMatrix);
+			DWORD bonePtr = ReadMemory<DWORD>(currEnt + hazedumper::netvars::m_dwBoneMatrix);
 			MAT3X4 boneMatrix = ReadMemory<MAT3X4>(bonePtr + 0x30 * 8); //head
 			Vector3 headPos = { boneMatrix.c[0][3], boneMatrix.c[1][3], boneMatrix.c[2][3] };
 			headPos.z += 8.75;
